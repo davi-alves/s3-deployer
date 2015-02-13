@@ -1,0 +1,25 @@
+{
+  "name": "s3-code-backup",
+  "version": "0.0.1",
+  "description": "Compact the code/database and send it to a S3 Bucket",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flyingkrai/s3-code-backup.git"
+  },
+  "keywords": [
+    "aws",
+    "s3",
+    "node",
+    "backup"
+  ],
+  "author": "Davi Alves <hey@davialves.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flyingkrai/s3-code-backup/issues"
+  },
+  "homepage": "https://github.com/flyingkrai/s3-code-backup"
+}
