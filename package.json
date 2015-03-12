@@ -1,0 +1,32 @@
+{
+  "name": "s3-code-backup",
+  "version": "0.0.1",
+  "description": "S3 Backuper",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flyingkrai/s3-code-backup.git"
+  },
+  "author": "Davi Alves <hey@davialves.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flyingkrai/s3-code-backup/issues"
+  },
+  "homepage": "https://github.com/flyingkrai/s3-code-backup",
+  "devDependencies": {
+    "chai": "^2.1.1",
+    "mocha": "^2.2.1",
+    "proxyquire": "^1.4.0"
+  },
+  "dependencies": {
+    "aws": "0.0.3-2",
+    "chalk": "^1.0.0",
+    "q": "^1.2.0"
+  }
+}
