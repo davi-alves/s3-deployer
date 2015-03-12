@@ -1,6 +1,6 @@
 var expect = require('chai').expect,
   proxyquire = require('proxyquire'),
-  Endpoint = require('AWS').Endpoint,
+  Endpoint = require('aws-sdk').Endpoint,
   endpointStub = "s3-sa-east-1.amazonaws.com";
 
 var endpoint = proxyquire('../aws/endpoint', {
@@ -15,6 +15,6 @@ describe('Endpoint Lib', function () {
   });
 
   it('should have the right endpoint', function () {
-    expect(endpoint._endpoint).to.equal(endpointStub);
+    expect(endpoint.host).to.equal(endpointStub);
   });
 });
