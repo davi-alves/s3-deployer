@@ -4,7 +4,7 @@ var expect = require('chai').expect,
   endpointStub = "s3-sa-east-1.amazonaws.com";
 
 var endpoint = proxyquire('../aws/endpoint', {
-  '../config.json': {
+  '../deploy.config.js': {
     "endpoint": endpointStub
   }
 });

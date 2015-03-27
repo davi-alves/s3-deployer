@@ -7,7 +7,7 @@ var expect = require('chai').expect,
   };
 
 var credentials = proxyquire('../aws/credentials', {
-  '../config.json': credentialsStub
+  '../deploy.config.js': credentialsStub
 });
 
 describe('Credentials Lib', function () {
