@@ -7,11 +7,19 @@ var
   util = require('util'),
   Credentials = require('./credentials'),
   Endpoint = require('./endpoint'),
-  config = require('../config.json');
+  config = require('../deploy.config.js'),
+  S3Lib, _instance;
 
-module.exports = function () {
-  return new S3();
-};
+/**
+ * Instantiate S3 class
+ */
+function S3Lib() {
+  if (undefined === _instance) {
+    _instance = new S3();
+  }
+
+  return _instance;
+}
 
 /**
  * S3 interface to AWS.S3 functions
@@ -23,6 +31,7 @@ function S3() {
   this.FILE = 'upload-file';
   this.ERROR = 'upload-error';
   this.CLEAN = 'upload-clean';
+  this._cleanBucket = config.cleanBucket;
 }
 
 // inherit events.EventEmitter
@@ -84,6 +93,12 @@ S3.prototype.list = function () {
 S3.prototype.clean = function () {
   var _this = this;
   var deferred = Q.defer();
+
+  if (!this._cleanBucket) {
+    return Q.promise(function (resolve, reject) {
+      resolve('Skiping bucket clean by configuration.');
+    });
+  }
 
   this.list()
     .then(function (keys) {
@@ -168,3 +183,6 @@ S3.prototype.upload = function (files) {
       _this.emit('upload-error', err.message);
     });
 };
+
+// module.exportes goes at end due javascript processing way
+module.exports = S3Lib();

@@ -1,6 +1,6 @@
 var
   AWS = require('aws-sdk'),
-  config = require('../config.json'),
+  config = require('../deploy.config.js'),
   _instance,
   Endpoint;
 

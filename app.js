@@ -1,9 +1,9 @@
 var
   path = require('path'),
   chalk = require('chalk'),
-  S3 = require('./aws/s3')(),
+  S3 = require('./aws/s3'),
   scan = require('./helpers/scan'),
-  distFolder = __dirname + '/' + require('./config.json').distFolder;
+  distFolder = __dirname + '/' + require('./deploy.config.js').distFolder;
 
 distFolder = distFolder.replace(new RegExp('\\' + path.sep, 'g'), '/'); // UNIX style path
 print = console.log;
