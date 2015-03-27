@@ -2,3 +2,4 @@ node_modules
 deploy.config.js
 credentials.csv
 npm-debug.log
+*.sublime-workspace
